@@ -1,0 +1,21 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle Snapshot",
+        "command": "snapshot:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Snapshot",
+          "command": "snapshot:toggle"
+        }
+      ]
+    }
+  ]
+}
