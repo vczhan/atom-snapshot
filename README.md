@@ -19,3 +19,5 @@
 插件写的比较匆忙，测试不充分，应该有不少bug，所以如果有人无意看到这个并且有需要，我只能友情提示：慎用！
 
 最后，这不是使用文档，英文也不太会，就这样。
+
+![A screenshot of your package](https://raw.githubusercontent.com/vczhan/atom-snapshot/master/resources/screenshot.gif)
