@@ -1,13 +1,13 @@
 {
   "name": "snapshot",
   "main": "./lib/snapshot",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "0.1.0",
+  "description": "code snapshot",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "snapshot:toggle"
   },
-  "repository": "https://github.com/atom/snapshot",
+  "repository": "https://github.com/vczhan/atom-snapshot",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
