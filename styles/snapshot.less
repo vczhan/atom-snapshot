@@ -7,6 +7,7 @@
 @color: #00c196;
 
 snapshot-viewer {
+  display: block;
   position: relative;
   height: 100%;
   width: 120px;
@@ -17,6 +18,7 @@ ss-header {
   display: block;
   background: #282a36;
   border-bottom: 1px #181920 solid;
+  font-size: 11px;
 
   .ss-add {
     display: block;
@@ -35,7 +37,11 @@ ss-header {
 }
 
 .snapshot-list {
-  height: calc(~"100% - 75px");
+  height: calc(~"100% - 95px");
+}
+
+.snapshot-list-ul {
+  height: 100%;
   overflow-y: scroll;
 }
 
@@ -97,4 +103,18 @@ ss-header {
       color: #ac4142;
     }
   }
+}
+
+ss-footer {
+  display: block;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 10px;
+  height: 20px;
+  line-height: 20px;
+  background: #282a36;
+  border-top: 1px solid #181920;
+  text-align: center;
 }
