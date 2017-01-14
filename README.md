@@ -1,23 +1,9 @@
 # snapshot package
 
-快照：对指定数据集合的一个完全可用拷贝，该拷贝包括相应数据在某个时间点的映像，它的作用主要是能够进行在线数据备份与恢复。
+ **Snapshot**, a set of computer files and directories kept in storage as they were some time in the past.
 
-有时候写代码，写着写着感觉不对劲就想回退到某个时刻的代码，这时只能一步一步按撤销。如果有类似PS的快照功能，一步到位就好了。在Atom的package库里找了许久没找到合意的，可能是关键词没对。倒是有2个类似功能的插件但需要配合Git，利用Git的版本回滚来实现的，最后还是打算自己写个。
-
-以前没写过插件，查文档，研究其他插件代码，而大部分插件是用CoffeeScript写的，看的心累。最后花了两天三夜才写了这个半成品：功能倒是基本实现了，就是界面丑了点，还有些配置相关的东西懒得搞了，先凑合着用吧。
-
-大概思路是用编辑器提供的API取得文件id和代码等信息，以id为key存储在sessionStorage中，要恢复就取出数据并替换当前代码。
-
-关于存储哪些信息，最主要的是id和代码，文件的id基本不会变，不管是重命名或是移动，所以可以做为key。其他可以存储的快照时的时间，鼠标位置等。
-
-存储介质，可以是storage，本地文件，或是变量中等。选用sessionStorage的好处是容量够大，存取方便。当然关闭了Atom，数据就没了，要注意这点。
-
-最后替换代码原来是想用Node.js的`fs.writeFile`方法把数据写入文件，弊端是如果当前代码是编辑了但没保存时，编辑器里的代码是不会变的，只能先调用save方法保存当前代码，再把数据写入文件使编辑器里的代码回退。后来发现编辑器有暴露`setText`方法，这就省事多了。
-
-目前想改进的地方是除了手动快照备份，每次保存文件时也自动备份。因为手动快照是有意识的行为，而写代码时经常不可预测，不一定会意识到哪里的代码要进行备份。我们使用保存时一般是下意识的认为这是个“重要的时刻”，但撤销功能是以一定时间文字变化为单位的，有可能很多个这样的单位才会保存一次，所以我觉得每当保存时应该也要备份，这样我们会更快的到达这些“重要时刻”，当然这也要做个限制，比如保留最近的20次？类似很多剪贴板增强工具。不过这方面的交互界面没想好，暂时先放着吧。
-
-插件写的比较匆忙，测试不充分，应该有不少bug，所以如果有人无意看到这个并且有需要，我只能友情提示：慎用！
-
-最后，这不是使用文档，英文也不太会，就这样。
+ **Snapshot**, a view of a source code repository as it was at a particular time for the purpose of revision control in software development.([wiki](https://en.wikipedia.org/wiki/Snapshot))
 
 ![A screenshot of your package](https://raw.githubusercontent.com/vczhan/atom-snapshot/master/resources/screenshot.gif)
+
+Note: The code buffer stored in sessionStorage. It means that the data would get cleared when the Window was closed.
