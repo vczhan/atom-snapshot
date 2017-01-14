@@ -5,6 +5,8 @@
 @import "ui-variables";
 
 @color: #00c196;
+@bgColor: #353848;
+@bgHoverColor: #393c4d;
 
 snapshot-viewer {
   display: block;
@@ -49,33 +51,18 @@ ss-header {
   position: relative;
   width: 120px;
   height: 60px;
-  padding: 5px 5px 5px 10px;
-  background: linear-gradient(135deg, transparent 5px, rgba(255,255,255,.12) 0) top left no-repeat/100% 70%,
-              linear-gradient(45deg, transparent 5px, rgba(255,255,255,.1) 0) bottom left no-repeat/100% 30%;
-  color: #efefef!important;
+  padding: 5px 8px 5px 10px;
+  background: linear-gradient(135deg, @bgColor 4px, transparent 0, transparent 7px, @bgColor 0) top left no-repeat/100% 74%,
+              linear-gradient(70deg, transparent 18px, @bgColor 0) bottom left no-repeat/100% 28%;
+  color: #9b9fb5!important;
   margin-top: 4px;
   box-sizing: border-box;
   cursor: pointer;
 
-  &.active {
-    background: linear-gradient(45deg, transparent 5px, @color 0);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background: linear-gradient(135deg, transparent 5px, @color 0) top left no-repeat/100% 70%,
-                linear-gradient(45deg, transparent 5px, @color 0) bottom left no-repeat/100% 30%;
-    opacity: 0;
-    transition: opacity .3s ease;
-  }
-
-  &:hover::after {
-    opacity: 1;
+  &:hover {
+    color: ##d6d8e1!important;
+    background: linear-gradient(135deg, @bgHoverColor 4px, transparent 0, transparent 7px, @bgHoverColor 0) top left no-repeat/100% 74%,
+                linear-gradient(70deg, transparent 18px, @bgHoverColor 0) bottom left no-repeat/100% 28%;
   }
 
   .name {
@@ -88,6 +75,7 @@ ss-header {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     white-space: normal;
+    word-wrap: break-word;
   }
   .time {
     display: block;
