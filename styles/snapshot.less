@@ -13,7 +13,6 @@ snapshot-viewer {
   position: relative;
   height: 100%;
   width: 120px;
-  overflow-x: scroll;
 }
 
 ss-header {
@@ -47,6 +46,10 @@ ss-header {
   overflow-y: scroll;
 }
 
+.snapshot-list-ul::-webkit-scrollbar{
+  width: 0
+}
+
 .snapshot-list-li {
   position: relative;
   width: 120px;
@@ -58,6 +61,7 @@ ss-header {
   margin-top: 4px;
   box-sizing: border-box;
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     color: ##d6d8e1!important;
