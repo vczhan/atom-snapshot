@@ -1,7 +1,7 @@
 {
   "name": "snapshot",
   "main": "./lib/snapshot",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "code snapshot",
   "keywords": [],
   "activationCommands": {
